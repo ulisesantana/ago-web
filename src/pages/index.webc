@@ -1,0 +1,10 @@
+---
+layout: author.webc
+title: Sobre mí
+---
+
+<h1>Sobre mí</h1>
+
+<animation-portfolio size="2"></animation-portfolio>
+
+

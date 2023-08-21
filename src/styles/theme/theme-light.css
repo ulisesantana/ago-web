@@ -1,0 +1,17 @@
+  .theme-light {
+    /* light theme */
+    --accent-color: var(--secondary-color);
+    --accent-alt-color: var(--primary-color);
+    --bg-color: #e6e2e2;
+    --bg-alt-color: var(--white);
+    --highlight-color: var(--black);
+    --icon-color: var(--text-color);
+    --menu-mobile-bg-color: #F7F7F7;
+    --inactive-field-color: #F7F7F7;
+    --light-color: #cccccc;
+    --light-border-color: #9a9a9a;
+    --link-color: var(--secondary-color);
+    --link-visited-color: var(--secondary-color);
+    --tag-color: var(--secondary-color);
+    --text-color: #292929;
+  }

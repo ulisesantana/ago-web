@@ -1,0 +1,47 @@
+{
+  "name": "ago-web",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "scripts": {
+    "build": "export NODE_ENV=production; npm run clean && eleventy",
+    "build:ci": "npm run build",
+    "clean": "rm -rf _site",
+    "dependencies:purge": "rm -rf node_modules && npm install",
+    "dev": "npm run start",
+    "lint": "eslint .",
+    "lint:fix": "npm run lint -- --fix",
+    "post:new": "./scripts/create-post.mjs",
+    "stage": "export NODE_ENV=production;npm run clean && eleventy --serve",
+    "start": "export NODE_ENV=dev;npm run clean && eleventy --serve",
+    "test": "NODE_ENV=production node --test src/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulisesantana/web.git"
+  },
+  "keywords": [
+    "web",
+    "blog",
+    "personal wiki"
+  ],
+  "author": "Ulises Santana <ulisesantana@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ulisesantana/web/issues"
+  },
+  "homepage": "https://github.com/ulisesantana/web#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^2.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
+    "@11ty/eleventy-plugin-webc": "^0.8.1",
+    "eleventy-plugin-external-links": "^1.1.2",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.31.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}

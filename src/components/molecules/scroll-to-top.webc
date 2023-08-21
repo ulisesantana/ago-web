@@ -1,0 +1,37 @@
+<button title="Scroll to top" class="scroll-to-top hidden no-print">
+  <up-icon></up-icon>
+</button>
+
+<style>
+  .scroll-to-top {
+    align-items: center;
+    background-color: var(--accent-color);
+    border: none;
+    border-radius: 50%;
+    bottom: 32px;
+    cursor: pointer;
+    display: flex;
+    height: 60px;
+    justify-content: center;
+    opacity: 1;
+    position: fixed;
+    right: 48px;
+    transition: ease-in-out var(--transition-speed-fast);
+    width: 60px;
+    z-index: var(--z-index-3);
+  }
+
+  .scroll-to-top:hover {
+    filter: drop-shadow(0 0 0.75rem var(--accent-color));
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  @media print {
+    .scroll-to-top {
+      display: none;
+    }
+  }
+</style>

@@ -1,0 +1,50 @@
+<header>
+  <a class="isotype" href="/" webc:if="this.locale === 'es'">
+    <img src="/assets/images/logo.png" alt="Un cerebro teniendo una tormenta de ideas">
+    Ayoze García</a>
+  <a class="isotype" href="/en" webc:if="this.locale !== 'es'">
+    <img src="/assets/images/logo.png" alt="">
+    Ayoze García</a>
+  <nav-items></nav-items>
+</header>
+
+<style webc:scoped>
+  header {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto 24px;
+    max-width: 960px;
+    width: 100%;
+  }
+
+  header .lang {
+    font-size: 32px;
+  }
+
+  .isotype {
+    align-items: center;
+    display: flex;
+    border: none;
+    color: transparent;
+    font-size: var(--font-size-5);
+    font-weight: 600;
+    gap: 1rem;
+    letter-spacing: 1px;
+    -webkit-text-stroke-width: 1.5px;
+    -webkit-text-stroke-color: var(--link-color);
+    text-decoration: none;
+  }
+
+  .isotype img {
+    height: 3rem;
+    width: 3rem; 
+  }
+
+  @media screen and (max-width: 767px) {
+    header {
+      justify-content: center;
+    }
+  }
+</style>

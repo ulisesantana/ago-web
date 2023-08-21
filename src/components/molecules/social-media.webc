@@ -1,0 +1,56 @@
+<div class="social-media">
+  <ul>
+    <li>
+      <social-media-item :label="this.socialMedia.linkedin.label" :url="this.socialMedia.linkedin.url">
+        <linkedin-icon slot="icon"></linkedin-icon>
+      </social-media-item>
+    </li>
+    <li>
+      <social-media-item :label="this.socialMedia.twitter.label" :url="this.socialMedia.twitter.url">
+        <twitter-icon slot="icon"></twitter-icon>
+      </social-media-item>
+    </li>
+    <li>
+      <social-media-item webc:if="page.url !== '/cv/'" :label="this.socialMedia.cv.label" :url="this.socialMedia.cv.url">
+        <cv-icon slot="icon"></cv-icon>
+      </social-media-item>
+    </li>
+  </ul>
+</div>
+
+<style webc:scoped>
+  .social-media ul {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  .social-media ul li {
+    list-style: none;
+  }
+
+  .social-media ul li:last-child {
+    margin-right: 0;
+  }
+
+  @media screen and (max-width: 767px) {
+    .social-media {
+      width: 100%;
+    }
+  }
+
+  @media print {
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      margin: 0;
+      max-width: 90vw;
+    }
+  }
+</style>

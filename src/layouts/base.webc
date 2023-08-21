@@ -1,0 +1,9 @@
+---
+metatype: web
+layout: root.webc
+---
+
+<site-header></site-header>
+<main @raw="content"></main>
+<scroll-to-top></scroll-to-top>
+<site-footer></site-footer>

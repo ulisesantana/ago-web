@@ -1,0 +1,14 @@
+@import url('./theme-dark.css');
+@import url('./theme-light.css');
+
+:root {
+  color-scheme: light dark;
+  --black: #131e21;
+  --white: #f2f2f2;
+  --blue: #9ACBDA;
+  --purple: #571B7E;
+  --green: #44853e;
+  --yellow: #F7E018;
+  --primary-color: #94e8ff;
+  --secondary-color: #cc6633;
+}

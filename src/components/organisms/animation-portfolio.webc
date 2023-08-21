@@ -1,0 +1,41 @@
+<script webc:type="render" webc:is="template">
+	function animationLayout() {
+		const collection = this.animation.portfolio
+		const end = this.size || collection.length
+		return /*html*/`
+		<section class="animation-portfolio">
+			<ul class="page-break-after">
+		`.concat(collection.slice(0, end)
+			.map(({ title, description, type, link, thumbnail }) => {
+				return /* html */`
+				<animation-portfolio-item 
+					title="${title}"
+					type="${type}"
+					link="${link}"
+					thumbnail="${thumbnail}"
+				>
+					${description}
+				</animation-portfolio-item>
+		`})
+			.join(""))
+			.concat(/*html*/`
+			</ul>
+		</section>
+		`);
+	}
+</script>
+
+<style webc:scoped>
+	ul {
+		align-items: baseline;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: 100%;
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+		gap: 32px;
+		width: 100%;
+	}
+</style>

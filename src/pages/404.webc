@@ -1,0 +1,68 @@
+---
+layout: base.webc
+permalink: "404.html"
+dynamicPermalink: false
+---
+
+<div class="page-not-found">
+  <div class="message">
+    <h2 id="message-title">Página no encontrada</h2>
+    <p id="message-body">Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar</p>
+  </div>
+  <img 
+    src="/assets/images/404.gif" 
+    alt="Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no."
+  />
+  <div class="cta">
+    <a href="/">
+      <button>
+        Volver a la página principal
+      </button>
+    </a>
+  </div>
+  <script webc:keep>
+    if(window.location.pathname.startsWith('/en/')) {
+      const title = document.querySelector('#message-title')
+      const body = document.querySelector('#message-body')
+      const img = document.querySelector('.page-not-found img')
+      const ctaLink = document.querySelector('.cta a')
+      const ctaButton = document.querySelector('.cta button')
+
+      title.textContent = 'Page not found'
+      body.textContent = 'Ups, I don\'t know how do you get here, but I have nothing to show you.'
+      img.alt = 'Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer\'s room or not.'
+      ctaLink.href = '/en'
+      ctaButton.textContent = 'Go back to the home page'
+    }
+  </script>
+</div>
+
+<style>
+.page-not-found img {
+  display: block;
+  margin: 0 auto;
+}
+
+.page-not-found .cta {
+  align-content: center;
+  display: flex;
+  justify-content:center;
+}
+
+.page-not-found .cta button {
+  align-items: center;
+  display: flex;
+  background-color: var(--accent-color);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--bg-color);
+  cursor: pointer;
+  font-size: var(--font-size-3);
+  font-weight: bold;
+  justify-content: center;
+  margin: 2rem 0 0;
+  padding: 8px;
+  text-align: center;
+}
+</style>
+
