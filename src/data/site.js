@@ -7,8 +7,8 @@ module.exports = {
     name: 'Ayoze García'
   },
   colors: {
-    primary: '#F7E018',
-    secondary: '#44853e'
+    primary: '#94e8ff',
+    secondary: '#cc6633 '
   },
   es: {
     title: 'Ayoze García',

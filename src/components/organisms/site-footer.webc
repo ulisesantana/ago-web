@@ -3,7 +3,7 @@
   <social-media></social-media>
   <div class="bottom-text">
     <span class="thanks">
-      <div webc:if="this.locale === 'es'" webc:nokeep>
+      <div webc:if="this.$data.locale === 'es'" webc:nokeep>
         <span>
           Hecho con <like-icon></like-icon> y
         </span>
@@ -11,7 +11,7 @@
           <eleventy-icon></eleventy-icon>
         </a>
       </div>
-      <div webc:if="this.locale !== 'es'" webc:nokeep>
+      <div webc:if="this.$data.locale !== 'es'" webc:nokeep>
         <span>
           Made with <like-icon></like-icon> and
         </span>
@@ -20,7 +20,7 @@
         </a>
       </div>
     </span>
-    <small @raw="this.footer.copyright"></small>
+    <small @raw="this.$data.footer.copyright"></small>
   </div>
 </footer>
 

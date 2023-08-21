@@ -1,29 +1,13 @@
-<script webc:type="render" webc:is="template">
-	function animationLayout() {
-		const collection = this.animation.portfolio
-		const end = this.size || collection.length
-		return /*html*/`
-		<section class="animation-portfolio">
-			<ul class="page-break-after">
-		`.concat(collection.slice(0, end)
-			.map(({ title, description, type, link, thumbnail }) => {
-				return /* html */`
-				<animation-portfolio-item 
-					title="${title}"
-					type="${type}"
-					link="${link}"
-					thumbnail="${thumbnail}"
-				>
-					${description}
-				</animation-portfolio-item>
-		`})
-			.join(""))
-			.concat(/*html*/`
-			</ul>
-		</section>
-		`);
-	}
-</script>
+<section class="animation-portfolio">
+	<ul class="page-break-after">
+		<animation-portfolio-item
+			webc:for="item of this.$data.animation.slice(0, this.size)"
+			:title="item.title" :type="item.type" :link="item.link"
+			:thumbnail="item.thumbnail"
+			:description="item.description">
+		</animation-portfolio-item>
+	</ul>
+</section>
 
 <style webc:scoped>
 	ul {

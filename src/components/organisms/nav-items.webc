@@ -6,11 +6,11 @@
       menu.classList.toggle('active')
       btn.classList.toggle('active')
     }
-    const renderItem = ({ url, label }) =>
+    const renderItem = ({ url: route, label }) =>
       `<li>
         <a 
-          href="${url}"
-          class="${this.page.url === url ? 'active' : ''}"
+          :href="url('${route}')"
+          class="${this.$data.page.url === route ? 'active' : ''}"
         >
         ${label.toUpperCase()}
         </a>
@@ -19,7 +19,7 @@
     return `
 <nav class="no-print">
   <ul class="nav-items">
-    ${renderItems(this.nav[this.locale])}
+    ${renderItems(this.$data.nav[this.$data.locale])}
     <li><theme-switch></theme-switch></li>
   </ul>
   <button title="Toggle menu" class="mobile-menu" onclick="(${toggleMenu.toString()})()">

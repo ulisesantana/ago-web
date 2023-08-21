@@ -2,10 +2,10 @@
 	function title() {
 		let title;
 
-		if (this.title) {
-			title = `${this.title} | ${this.site.name}`;
+		if (this.$data.title) {
+			title = `${this.$data.title} | ${this.$data.site.name}`;
 		} else {
-			title = this.site.name;
+			title = this.$data.site.name;
 		}
 
 		return `<title>${title}</title>`;

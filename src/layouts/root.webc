@@ -1,9 +1,9 @@
 ---
 metatype: web
-metaImage: /assets/images/logo.png
+metaImage: assets/images/logo.png
 ---
 <!DOCTYPE html>
-<html :lang="this.locale">
+<html :lang="this.$data.locale">
 
 <head>
   <meta charset="utf-8">
@@ -14,14 +14,14 @@ metaImage: /assets/images/logo.png
   <meta webc:is="meta-data"></meta>
   <link webc:is="link-canonical">
   <meta name="generator" :content="this.eleventy.generator">
-  
+
   <!-- styles -->
-  <link rel="stylesheet" href="/styles/index.css" webc:keep>
-  <style webc:keep @raw="this.getCSS(this.page.url)"></style>
+  <link rel="stylesheet" :href="url('/styles/index.css')" webc:keep />  
+  <style webc:keep @raw="this.getCSS(this.$data.page.url)"></style>
   
   <!-- scripts -->
-  <script type="module" src="/components/index.js" webc:keep></script>
-  <script webc:keep @raw="this.getJS(this.page.url)"></script>
+  <script type="module" :src="url('/components/index.js')" webc:keep></script>
+  <script webc:keep @raw="this.getJS(this.$data.page.url)"></script>
 </head>
 
 <body class="theme-dark">

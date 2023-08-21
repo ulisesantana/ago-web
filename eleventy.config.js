@@ -2,7 +2,6 @@ const pluginWebC = require('@11ty/eleventy-plugin-webc')
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight')
 const { EleventyRenderPlugin } = require('@11ty/eleventy')
 const externalLinks = require('eleventy-plugin-external-links')
-const yaml = require('js-yaml')
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(EleventyRenderPlugin)
@@ -15,9 +14,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/assets': 'assets' })
   eleventyConfig.addPassthroughCopy({ 'src/components/**/*.js': 'components' })
 
-  eleventyConfig.addDataExtension('yaml', contents => yaml.load(contents))
-
   return {
+  pathPrefix: '/ago-web/',
     dir: {
       input: 'src/pages',
       includes: '../components',

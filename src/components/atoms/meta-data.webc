@@ -1,15 +1,15 @@
 <script webc:type="render" webc:is="template">
 	function metaData() {
-		const localeSite = this.site[this.locale]
-		const {author, twitter, name: siteName, colors} = this.site
-		const description = this.description ?? localeSite.description;
-		const title = this.title ?? localeSite.title;
-		const metaImage = this.metaImage ? this.metaImage : `/assets${this.page.url}cover.png`
+		const localeSite = this.$data.site[this.$data.locale]
+		const {author, twitter, name: siteName, colors} = this.$data.site
+		const description = this.$data.description ?? localeSite.description;
+		const title = this.$data.title ?? localeSite.title;
+		const metaImage = this.url(this.$data.metaImage ? this.$data.metaImage : `/assets${this.$data.page.url}cover.png`)
 
-		return `
-<link rel="icon" type="image/x-icon" href="/assets/images/favicon.png">
+		return /** html **/`
+<link rel="icon" type="image/x-icon" :href="url('/assets/images/favicon.png')">
 <!-- open graph -->
-<meta property="og:type" content="${this.metatype}">
+<meta property="og:type" content="${this.$data.metatype}">
 <meta name="theme-color" content="${colors.primary}"/>
 <meta name="author" content="${author.name}">
 <meta property="og:title" content="${title}">

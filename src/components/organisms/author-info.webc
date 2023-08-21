@@ -1,28 +1,28 @@
 <section class="author-info">
-  <a :href="this.locale === 'es' ? '/' : '/en'">
+  <a :href="this.$data.locale === 'es' ? '/' : '/en'">
     <flipable-image>
-      <img slot="front-image" :src="this.fefo.images.author" alt="Ayoze García Ojeda" />
-      <img slot="back-image" :src="this.fefo.images.logo" alt="Ayoze García Ojeda" />
+      <img slot="front-image" :src="url('/assets/images/author-2.png')" alt="Ayoze García Ojeda" />
+      <img slot="back-image" :src="url('/assets/images/logo.png')" alt="Ayoze García Ojeda" />
     </flipable-image>
     <!--TODO: Añadir imagen y transición para tema claro y tema oscuro-->
   </a>
   <div class="info">
     <h2 class="title" custom>
-      <span webc:if="this.locale === 'es'" webc:nokeep>
+      <span webc:if="this.$data.locale === 'es'" webc:nokeep>
         👋 Hola! Soy <b>Ayoze García Ojeda</b>
       </span>
-      <span webc:if="this.locale !== 'es'" webc:nokeep>
+      <span webc:if="this.$data.locale !== 'es'" webc:nokeep>
         👋 Hi! I'm <b>Ayoze García Ojeda</b>
       </span>
     </h2>
     <p class="description">
-      <span webc:if="this.locale === 'es'" webc:nokeep>
+      <span webc:if="this.$data.locale === 'es'" webc:nokeep>
         Soy una persona creativa a la que le encanta plasmar ideas.
         Creo y animo cosas desde las Islas Canarias 🏝️
 
         <b>También puedes rellenar tú esto Ayoze</b>
       </span>
-      <span webc:if="this.locale !== 'es'" webc:nokeep>
+      <span webc:if="this.$data.locale !== 'es'" webc:nokeep>
         A creative day dreamer.
         Based in the Canary Islands 🏝️
       </span>
