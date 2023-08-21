@@ -14,6 +14,10 @@ metaImage: assets/images/logo.png
   <meta webc:is="meta-data"></meta>
   <link webc:is="link-canonical">
   <meta name="generator" :content="this.eleventy.generator">
+  
+  <!-- TODO: REMOVE BEFORE FINAL DEPLOY -->
+  <meta name="robots" content="noindex">
+
 
   <!-- styles -->
   <link rel="stylesheet" :href="url('/styles/index.css')" webc:keep />  
