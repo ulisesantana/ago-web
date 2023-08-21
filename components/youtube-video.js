@@ -36,8 +36,9 @@ class YouTubeVideo extends HTMLElement {
   }
 
   connectedCallback () {
-    const videoId = this.getAttribute('video-id')
-    const caption = this.getAttribute('video-caption') || ''
+    const videoLink = this.getAttribute('video')
+    const caption = this.getAttribute('caption') || ''
+    const videoId = this.extractYouTubeId(videoLink)
     this.shadowRoot.innerHTML = /* html */`
     ${youTubeVideoStyle}
     <div class="youtube-video">
@@ -49,6 +50,21 @@ class YouTubeVideo extends HTMLElement {
       <small>${caption}</small>
     </div>
     `
+  }
+
+  extractYouTubeId (url) {
+    const patterns = [
+      /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?\/)|.*[?&]v=)|youtu\.be\/)([^"&?\/ ]{11})/i, // URL estándar y otros formatos
+      /(?:youtube-nocookie\.com\/embed\/)([^"&?\/ ]{11})/i // "No Cookies" Mode
+    ]
+
+    for (const pattern of patterns) {
+      const match = url.match(pattern)
+      if (match && match[1]) {
+        return match[1]
+      }
+    }
+    return null
   }
 };
 
