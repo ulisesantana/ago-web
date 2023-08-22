@@ -10,7 +10,7 @@
 }
 
 button {
-  background-color: var(--primary-color);
+  background-color: var(--accent-color);
   border: none;
   border-radius: var(--border-radius);
   color: var(--bg-color);
