@@ -1,0 +1,9 @@
+---
+metatype: portfolio
+layout: author-bottom.webc
+metaImage: /assets/logo.png
+title: Diseños de Ayoze García
+---
+
+<h1>Diseños</h1>
+<animation-portfolio></animation-portfolio>

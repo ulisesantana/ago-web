@@ -1,8 +1,8 @@
 <header>
-  <a class="isotype" href="/" webc:if="this.$data.locale === 'es'">
+  <a class="isotype" :href="url('/')" webc:if="this.$data.locale === 'es'">
     <img :src="this.url('/assets/images/logo.png')" alt="Un cerebro teniendo una tormenta de ideas">
     Ayoze García</a>
-  <a class="isotype" href="/en" webc:if="this.$data.locale !== 'es'">
+  <a class="isotype" :href="url('/en')" webc:else>
     <img :src="this.url('/assets/images/logo.png')" alt="A brain having a brain storm">
     Ayoze García</a>
   <nav-items></nav-items>

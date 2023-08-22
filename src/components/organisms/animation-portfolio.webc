@@ -1,7 +1,7 @@
 <section class="animation-portfolio">
 	<ul class="page-break-after">
 		<animation-portfolio-item
-			webc:for="item of this.$data.animation.slice(0, this.size)"
+			webc:for="item of this.$data.animations.slice(0, this.size)"
 			:title="item.title" :type="item.type" :link="item.link"
 			:thumbnail="item.thumbnail"
 			:description="item.description">

@@ -9,7 +9,7 @@
       <span webc:if="this.$data.locale === 'es'" webc:nokeep>
         👋 Hola! Soy <b>Ayoze García Ojeda</b>
       </span>
-      <span webc:if="this.$data.locale !== 'es'" webc:nokeep>
+      <span webc:else webc:nokeep>
         👋 Hi! I'm <b>Ayoze García Ojeda</b>
       </span>
     </h2>
@@ -20,7 +20,7 @@
 
         <b>También puedes rellenar tú esto Ayoze</b>
       </span>
-      <span webc:if="this.$data.locale !== 'es'" webc:nokeep>
+      <span webc:else webc:nokeep>
         A creative day dreamer.
         Based in the Canary Islands 🏝️
       </span>

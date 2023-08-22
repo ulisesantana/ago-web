@@ -1,0 +1,26 @@
+<section class="illustration-portfolio">
+	<ul class="page-break-after">
+		<illustration-portfolio-item
+			webc:for="item of this.$data.illustrations.slice(0, this.size)"
+			:title="item.title" 
+			:src="this.url(item.link)"
+			webc:nokeep>
+		</illustration-portfolio-item>
+	</ul>
+</section>
+
+<style webc:scoped>
+	ul {
+		align-items: center;
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		height: 100%;
+		justify-content: center;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		gap: 32px;
+		width: 100%;
+	}
+</style>

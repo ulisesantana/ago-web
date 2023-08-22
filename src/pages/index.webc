@@ -1,10 +1,14 @@
 ---
-layout: author.webc
+layout: author-top.webc
 title: Sobre mí
 ---
 
 <h1>Sobre mí</h1>
-
+<h2>Animaciones</h2>
 <animation-portfolio size="2"></animation-portfolio>
+<link-cta :href="this.url('/animation/')" cta="Ver más animaciones"></link-cta>
+<h2>Ilustraciones</h2>
+<illustration-portfolio size="3"></illustration-portfolio>
+<link-cta :href="this.url('/illustration/')" cta="Ver más ilustraciones"></link-cta>
 
 

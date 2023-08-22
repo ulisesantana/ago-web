@@ -1,0 +1,39 @@
+<li class="illustration-portfolio-item">
+  <a :href="this.src">
+    <img class="illustration" :src="this.src" :alt="this.title" />
+    <span class="title" @text="this.title"></span>
+  </a>
+</li>
+
+<style>
+  .illustration-portfolio-item {
+    border-radius: var(--border-radius);
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    padding: 0;
+
+    max-width: 200px;
+    width: 200px;
+  }
+
+  .illustration-portfolio-item .title {
+    font-size: 1.25rem;
+    color: var(--text-color)
+  }
+
+  .illustration-portfolio-item .illustration {
+    border-radius: var(--border-radius);
+    max-width: 200px;
+    width: 200px;
+  }
+
+  .illustration-portfolio-item a, 
+  .illustration-portfolio-item a:visited {
+    display: block;
+    color: var(--text-color)
+  }
+</style>

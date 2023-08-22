@@ -1,10 +1,9 @@
 ---
 metatype: portfolio
-layout: base.webc
+layout: author-bottom.webc
 metaImage: /assets/logo.png
-title: Animations by Ayoze García
-locale: es
+title: Animaciones de Ayoze García
 ---
 
+<h1>Animaciones</h1>
 <animation-portfolio></animation-portfolio>
-<author-info></author-info>

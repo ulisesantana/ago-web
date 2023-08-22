@@ -1,0 +1,8 @@
+---
+metatype: web
+layout: base.webc
+metaImage: /assets/logo.png
+---
+
+<div @raw="content"></div>
+<author-info></author-info>

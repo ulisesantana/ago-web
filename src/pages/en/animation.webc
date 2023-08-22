@@ -1,0 +1,9 @@
+---
+metatype: portfolio
+layout: author-bottom.webc
+metaImage: /assets/logo.png
+title: Animations by Ayoze García
+---
+
+<h1>Animations</h1>
+<animation-portfolio></animation-portfolio>

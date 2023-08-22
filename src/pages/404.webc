@@ -6,7 +6,7 @@ dynamicPermalink: false
 
 <div class="page-not-found">
   <div class="message">
-    <h2 id="message-title">Página no encontrada</h2>
+    <h1 id="message-title">Página no encontrada</h1>
     <p id="message-body">Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar</p>
   </div>
   <img 
@@ -21,6 +21,7 @@ dynamicPermalink: false
     </a>
   </div>
   <script webc:keep>
+    console.log('PATH', window.location.pathname)
     if(window.location.pathname.includes('/en/')) {
       const title = document.querySelector('#message-title')
       const body = document.querySelector('#message-body')
@@ -31,7 +32,7 @@ dynamicPermalink: false
       title.textContent = 'Page not found'
       body.textContent = 'Ups, I don\'t know how do you get here, but I have nothing to show you.'
       img.alt = 'Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer\'s room or not.'
-      ctaLink.href = '/en'
+      ctaLink.href = window.location.pathname.split('/en/')[0] + '/en'
       ctaButton.textContent = 'Go back to the home page'
     }
   </script>

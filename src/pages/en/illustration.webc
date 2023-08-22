@@ -1,0 +1,9 @@
+---
+metatype: portfolio
+layout: author-bottom.webc
+metaImage: /assets/logo.png
+title: Illustrations by Ayoze García
+---
+
+<h1>Illustrations</h1>
+<illustration-portfolio></illustration-portfolio>
