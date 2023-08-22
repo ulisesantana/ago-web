@@ -10,7 +10,6 @@
     "dev": "npm run start",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "post:new": "./scripts/create-post.mjs",
     "stage": "export NODE_ENV=production;npm run clean && eleventy --serve",
     "start": "export NODE_ENV=dev;npm run clean && eleventy --serve",
     "test": "NODE_ENV=production node --test src/test"
