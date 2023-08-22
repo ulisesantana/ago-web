@@ -29,7 +29,7 @@ module.exports = [
   },
   {
     title: 'Niño soldado',
-    link: '/assets/illustrations/Niño soldado.jpg'
+    link: '/assets/illustrations/Niño soldado.jpg'
   },
   {
     title: '¿Quién ha dicho que la guerra es mala?',
