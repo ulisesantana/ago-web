@@ -15,7 +15,6 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ 'src/components/**/*.js': 'components' })
 
   return {
-  pathPrefix: '/ago-web/',
     dir: {
       input: 'src/pages',
       includes: '../components',

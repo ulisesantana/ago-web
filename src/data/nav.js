@@ -8,6 +8,9 @@ module.exports = {
   ],
   en: [
     { url: '/', label: '🇪🇸' },
-    { url: '/en/', label: 'about me' }
+    { url: '/en/', label: 'about me' },
+    { url: '/en/animation/', label: 'animation' },
+    { url: '/en/design/', label: 'design' },
+    { url: '/en/ilustration/', label: 'illustration' }
   ]
 }

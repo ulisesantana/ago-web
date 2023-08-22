@@ -21,7 +21,7 @@ dynamicPermalink: false
     </a>
   </div>
   <script webc:keep>
-    if(window.location.pathname.startsWith('/en/')) {
+    if(window.location.pathname.includes('/en/')) {
       const title = document.querySelector('#message-title')
       const body = document.querySelector('#message-body')
       const img = document.querySelector('.page-not-found img')
