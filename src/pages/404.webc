@@ -14,7 +14,7 @@ dynamicPermalink: false
     alt="Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no."
   />
   <div class="cta">
-    <a href="/">
+    <a :href="url('/')">
       <button>
         Volver a la página principal
       </button>
