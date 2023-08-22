@@ -123,7 +123,7 @@
 
 <body class="theme-dark">
   <site-header class="wn0qslztw"><header>
-  <a href="/" class="isotype">
+  <a href="/ago-web/" class="isotype">
     <img src="/ago-web/assets/images/logo.png" alt="Un cerebro teniendo una tormenta de ideas">
     Ayoze García</a>
   
@@ -143,7 +143,7 @@
           <a href="/ago-web/design/">DISEÑO</a>
         </li>
 <li>
-          <a href="/ago-web/ilustration/">ILUSTRACIÓN</a>
+          <a href="/ago-web/illustration/">ILUSTRACIÓN</a>
         </li>
       <li><theme-switch class="wk09v1fvl"><div class="theme-switch">
   <input type="checkbox">
@@ -209,7 +209,7 @@
 </site-header>
 <main><div class="page-not-found">
   <div class="message">
-    <h2 id="message-title">Página no encontrada</h2>
+    <h1 id="message-title">Página no encontrada</h1>
     <p id="message-body">Vaya, no sé como has llegado hasta aquí, pero no tengo nada para mostrar</p>
   </div>
   <img src="/ago-web/assets/images/404.gif" alt="Vincent Vega en Pulp Fiction validando si drogarse en la habitación de su camello o no.">
@@ -221,6 +221,7 @@
     </a>
   </div>
   <script>
+    console.log('PATH', window.location.pathname)
     if(window.location.pathname.includes('/en/')) {
       const title = document.querySelector('#message-title')
       const body = document.querySelector('#message-body')
@@ -231,7 +232,7 @@
       title.textContent = 'Page not found'
       body.textContent = 'Ups, I don\'t know how do you get here, but I have nothing to show you.'
       img.alt = 'Vincent Vega in Pulp Fiction validating whether to get high in his drug dealer\'s room or not.'
-      ctaLink.href = '/en'
+      ctaLink.href = window.location.pathname.split('/en/')[0] + '/en'
       ctaButton.textContent = 'Go back to the home page'
     }
   </script>
