@@ -17,10 +17,10 @@ class ScrollToTop extends HTMLElement {
 
   handleScroll () {
     const scrollLimit = 300
-    if (window.pageYOffset > scrollLimit && !this.show) {
+    if (window.scrollY > scrollLimit && !this.show) {
       this.show = true
       this.element.classList.remove('hidden')
-    } else if (window.pageYOffset <= scrollLimit) {
+    } else if (window.scrollY <= scrollLimit) {
       this.show = false
       this.element.classList.add('hidden')
     }
