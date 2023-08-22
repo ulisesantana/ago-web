@@ -1,0 +1,59 @@
+<script webc:type="render" webc:is="template">
+  function toggleMenuButton() {
+    function toggleMenu() {
+      const menu = document.querySelector('.nav-items')
+      const btns = document.querySelectorAll('.toggle-menu-button');
+
+      menu.classList.toggle('active')
+      for (const btn of btns) {
+        btn.classList.toggle('active')
+      }
+    }
+    return /* html */`
+      <button title="Toggle menu" class="toggle-menu-button" onclick="(${toggleMenu.toString()})()">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>`
+  }
+</script>
+
+<style webc:scoped>
+  button.toggle-menu-button {
+    background: var(--link-color);
+    border: none;
+    border-radius: 50%;
+    color: black;
+    display: block;
+    font-size: 32px;
+    height: 60px;
+    width: 60px;
+    z-index: var(--z-index-5);
+  }
+
+  .bar {
+    display: block;
+    position: relative;
+    width: 24px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: var(--bg-color);
+    margin: 4px auto 2px;
+    transition: all ease-in-out var(--transition-speed-fast);
+  }
+
+  button.toggle-menu-button.active .bar:nth-child(1) {
+    transform: rotate(-45deg);
+    margin-top: 14px;
+  }
+
+  button.toggle-menu-button.active .bar:nth-child(2) {
+    transform: rotate(45deg);
+    margin-top: -6px;
+  }
+
+  button.toggle-menu-button.active .bar:nth-child(3) {
+    opacity: 0;
+    transform: rotate(45deg);
+  }
+</style>

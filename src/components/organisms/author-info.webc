@@ -1,11 +1,9 @@
 <section class="author-info">
-  <a :href="this.$data.locale === 'es' ? '/' : '/en'">
-    <flipable-image>
-      <img slot="front-image" :src="url('/assets/images/author-2.png')" alt="Ayoze García Ojeda" />
-      <img slot="back-image" :src="url('/assets/images/logo.png')" alt="Ayoze García Ojeda" />
-    </flipable-image>
-    <!--TODO: Añadir imagen y transición para tema claro y tema oscuro-->
-  </a>
+  <div class="circle">
+    <a :href="this.$data.locale === 'es' ? this.url('/') : this.url('/en')">
+      <img :src="url('/assets/images/author.png')" alt="Ayoze García Ojeda" />
+    </a>
+  </div>
   <div class="info">
     <h2 class="title" custom>
       <span webc:if="this.$data.locale === 'es'" webc:nokeep>
@@ -44,6 +42,32 @@
     max-width: 100%;
     padding: 0 24px;
     width: 80ch;
+  }
+
+  .circle, .circle img {
+    border-radius: 50%;
+  }
+
+  .circle {
+    align-items: center;
+    display: flex;
+    border: 4px solid var(--link-color);
+    padding: 0.5rem;
+  }
+
+  .circle img {
+    border-radius: 50%;
+    display: block;
+    height: auto;
+    width: 100%;
+    }
+
+  .circle img {
+    border-radius: 50%;
+  }
+
+  .circle img {
+    border-radius: 50%;
   }
 
   .description {

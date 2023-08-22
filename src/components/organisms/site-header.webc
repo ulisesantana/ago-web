@@ -6,6 +6,7 @@
     <img :src="this.url('/assets/images/logo.png')" alt="A brain having a brain storm">
     Ayoze García</a>
   <nav-items></nav-items>
+  <desktop-menu-button></desktop-menu-button>
 </header>
 
 <style webc:scoped>

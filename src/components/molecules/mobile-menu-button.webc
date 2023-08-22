@@ -1,0 +1,25 @@
+<div class="mobile-menu-button">
+  <toggle-menu-button></toggle-menu-button>
+</div>
+
+
+<style webc:scoped>
+  .mobile-menu-button {
+    bottom: 32px;
+    display: block;
+    height: 60px;
+    left: calc(50% - 30px);
+    padding-bottom: 4px;
+    position: fixed;
+    right: unset;
+    top: unset;
+    width: 60px;
+    z-index: var(--z-index-5);
+  }
+
+  @media screen and (min-width: 768px) {
+    .mobile-menu-button {
+      display: none;
+    }
+  }
+</style>

@@ -1,35 +1,18 @@
-<script webc:type="render" webc:is="template">
-  function navItems() {
-    function toggleMenu() {
-      const menu = document.querySelector(':scope .nav-items')
-      const btn = document.querySelector(':scope button')
-      menu.classList.toggle('active')
-      btn.classList.toggle('active')
-    }
-    const renderItem = ({ url: route, label }) =>
-      `<li>
-        <a 
-          :href="url('${route}')"
-          class="${this.$data.page.url === route ? 'active' : ''}"
-        >
-        ${label.toUpperCase()}
-        </a>
-      </li>`
-    const renderItems = items => items.map(renderItem).join('\n')
-    return `
 <nav class="no-print">
-  <ul class="nav-items">
-    ${renderItems(this.$data.nav[this.$data.locale])}
-    <li><theme-switch></theme-switch></li>
-  </ul>
-  <button title="Toggle menu" class="mobile-menu" onclick="(${toggleMenu.toString()})()">
-    <span class="bar"></span>
-    <span class="bar"></span>
-    <span class="bar"></span>
-  </button>
-</nav>`
-  }
-</script>
+  <div class="nav-items">
+    <ul>
+      <li webc:for="item of this.$data.nav[this.$data.locale]">
+          <a 
+            :href="url(item.url)"
+            :class="this.$data.page.url === item.url ? 'active' : ''"
+            @text="item.label.toUpperCase()">
+          </a>
+        </li>
+      <li><theme-switch></theme-switch></li>
+    </ul>
+  </div>
+  <mobile-menu-button></mobile-menu-button>
+</nav>
 
 <style webc:scoped>
   nav {
@@ -45,8 +28,8 @@
     background: var(--menu-mobile-bg-color);
     bottom: -100%;
     display: flex;
-    flex-direction: column;
     height: fit-content;
+    justify-content: center;
     left: 0;
     margin: 0;
     padding: 16px 16px 104px;
@@ -58,52 +41,18 @@
     z-index: var(--z-index-1);
   }
 
-  .nav-items li:first-child {
+  .nav-items ul {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    max-width: 960px;
+    padding: 0;
+    width: 100%;
+  }
+
+  .nav-items ul li:first-child {
     font-size: 32px;
-  }
-
-  button.mobile-menu {
-    background: var(--link-color);
-    border: none;
-    border-radius: 50%;
-    bottom: 32px;
-    color: black;
-    display: block;
-    font-size: 32px;
-    height: 60px;
-    left: calc(50% - 30px);
-    padding-bottom: 4px;
-    position: fixed;
-    right: unset;
-    top: unset;
-    width: 60px;
-    z-index: var(--z-index-5);
-  }
-
-  .bar {
-    display: block;
-    position: relative;
-    width: 24px;
-    height: 4px;
-    border-radius: 3px;
-    background-color: var(--bg-color);
-    margin: 4px auto 2px;
-    transition: all ease-in-out var(--transition-speed-fast);
-  }
-
-  button.mobile-menu.active .bar:nth-child(1) {
-    transform: rotate(-45deg);
-    margin-top: 14px;
-  }
-
-  button.mobile-menu.active .bar:nth-child(2) {
-    transform: rotate(45deg);
-    margin-top: -6px;
-  }
-
-  button.mobile-menu.active .bar:nth-child(3) {
-    opacity: 0;
-    transform: rotate(45deg);
   }
 
   .nav-items.active {
@@ -127,21 +76,22 @@
 
   @media screen and (min-width: 768px) {
     .nav-items {
-      bottom: 0;
-      height: 100%;
-      left: -50%;
-      padding: 16px;
-      width: 50%;
+      bottom: unset;
+      padding: 16px;      
+      top: -100%;
     }  
-
-    .nav-items.active {
-      left: 0;
+    
+    .nav-items ul {
+      align-items: flex-end;
+      padding-right: calc(60px + 1rem);
     }
 
-    button.mobile-menu {
-      left: unset;
-      top: 1rem;
-      right: 1rem;
+    .nav-items.active {
+      top: 0;
+    }
+
+    .nav-items li {
+      padding-right: calc(calc(100%-960px) / 2);
     }
   }
 </style>

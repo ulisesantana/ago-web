@@ -32,7 +32,7 @@ module.exports = {
   images: {
     fallback: '/assets/images/fallback.png',
     logo: '/assets/images/logo.png',
-    author: '/assets/images/author-2.png'
+    author: '/assets/images/author.png'
   },
   dates: {
     /**

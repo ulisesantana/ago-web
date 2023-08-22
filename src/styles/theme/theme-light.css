@@ -2,8 +2,8 @@
     /* light theme */
     --accent-color: var(--secondary-color);
     --accent-alt-color: var(--primary-color);
-    --bg-color: #e6e2e2;
-    --bg-alt-color: var(--white);
+    --bg-color: var(--white);
+    --bg-alt-color: #e6e2e2;
     --highlight-color: var(--black);
     --icon-color: var(--text-color);
     --menu-mobile-bg-color: #F7F7F7;
