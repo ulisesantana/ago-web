@@ -1,7 +1,7 @@
 <li class="illustration-portfolio-item">
   <a :href="this.src">
     <img class="illustration" :src="this.src" :alt="this.title" />
-    <span class="title" @text="this.title"></span>
+    <small class="title" @text="this.title"></small>
   </a>
 </li>
 
@@ -15,14 +15,13 @@
     padding: 0;
     gap: 0.5rem;
     padding: 0;
-
     max-width: 200px;
+    text-align: center;
     width: 200px;
   }
 
   .illustration-portfolio-item .title {
-    font-size: 1.25rem;
-    color: var(--text-color)
+    color: var(--text-color);
   }
 
   .illustration-portfolio-item .illustration {
